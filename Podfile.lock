@@ -1,0 +1,38 @@
+PODS:
+  - Arrow (4.2.0)
+  - ClusterKit (0.3.5):
+    - ClusterKit/Core (= 0.3.5)
+  - ClusterKit/Core (0.3.5)
+  - FFPopup (1.0.0)
+  - FontAwesome.swift (1.4.8)
+  - Kingfisher (5.0.1)
+  - SwiftyJSON (4.2.0)
+
+DEPENDENCIES:
+  - Arrow
+  - ClusterKit
+  - FFPopup
+  - FontAwesome.swift
+  - Kingfisher
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Arrow
+    - ClusterKit
+    - FFPopup
+    - FontAwesome.swift
+    - Kingfisher
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Arrow: 7a8fd8f47b3f584ddeac1b783f1f230d183d21a7
+  ClusterKit: d8cc410748bdaacf5051c9353fb6a62d78245554
+  FFPopup: f1a9c2bb1df9d9cd254f15081e74112d9ccb6969
+  FontAwesome.swift: fb8637bffb9a588c7e8c753c084565b27b20a39d
+  Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+
+PODFILE CHECKSUM: 3df6074eaf19642d3e409735fa466145cc8ab8ae
+
+COCOAPODS: 1.5.3

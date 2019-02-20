@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34B5E5C3D31B2E56FB729400 /* Pods_Whooosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA50AFE0E19755740BB01AC5 /* Pods_Whooosh.framework */; };
+		7434DD84D33DE4409E31F9E1 /* Pods_WhoooshTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7E204D0A0605922B1EA28F /* Pods_WhoooshTests.framework */; };
 		A558C9F7221D3C7B0052D29E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558C9F6221D3C7B0052D29E /* AppDelegate.swift */; };
 		A558C9F9221D3C7B0052D29E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558C9F8221D3C7B0052D29E /* FirstViewController.swift */; };
 		A558C9FB221D3C7B0052D29E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558C9FA221D3C7B0052D29E /* SecondViewController.swift */; };
@@ -18,6 +20,7 @@
 		A558CA29221D3D6B0052D29E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558CA28221D3D6B0052D29E /* Constants.swift */; };
 		A558CA2A221D3D6B0052D29E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558CA28221D3D6B0052D29E /* Constants.swift */; };
 		A558CA2B221D3D6B0052D29E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558CA28221D3D6B0052D29E /* Constants.swift */; };
+		B0F3558E66C36C327318B0C0 /* Pods_WhoooshUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE01C646C16220521E72E61 /* Pods_WhoooshUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D6ABE1788885DD08F684097 /* Pods-Whooosh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whooosh.release.xcconfig"; path = "Pods/Target Support Files/Pods-Whooosh/Pods-Whooosh.release.xcconfig"; sourceTree = "<group>"; };
+		4605DD9A9724EE90E011D536 /* Pods-WhoooshTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhoooshTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhoooshTests/Pods-WhoooshTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7A7E204D0A0605922B1EA28F /* Pods_WhoooshTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhoooshTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88042B230B1098754F564B50 /* Pods-WhoooshUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhoooshUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhoooshUITests/Pods-WhoooshUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A558C9F3221D3C7B0052D29E /* Whooosh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whooosh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A558C9F6221D3C7B0052D29E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A558C9F8221D3C7B0052D29E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +60,11 @@
 		A558CA18221D3C7C0052D29E /* WhoooshUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoooshUITests.swift; sourceTree = "<group>"; };
 		A558CA1A221D3C7C0052D29E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A558CA28221D3D6B0052D29E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A8C2BE0B413FF0AADA9D9807 /* Pods-WhoooshUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhoooshUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhoooshUITests/Pods-WhoooshUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EBE01C646C16220521E72E61 /* Pods_WhoooshUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhoooshUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED5BFB4F14B03B0BD5BC731D /* Pods-Whooosh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whooosh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Whooosh/Pods-Whooosh.debug.xcconfig"; sourceTree = "<group>"; };
+		F74BC64F311B8D281503A723 /* Pods-WhoooshTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhoooshTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhoooshTests/Pods-WhoooshTests.release.xcconfig"; sourceTree = "<group>"; };
+		FA50AFE0E19755740BB01AC5 /* Pods_Whooosh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whooosh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B5E5C3D31B2E56FB729400 /* Pods_Whooosh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7434DD84D33DE4409E31F9E1 /* Pods_WhoooshTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +88,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F3558E66C36C327318B0C0 /* Pods_WhoooshUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7551F1332ADA5F4B3D5466C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED5BFB4F14B03B0BD5BC731D /* Pods-Whooosh.debug.xcconfig */,
+				0D6ABE1788885DD08F684097 /* Pods-Whooosh.release.xcconfig */,
+				4605DD9A9724EE90E011D536 /* Pods-WhoooshTests.debug.xcconfig */,
+				F74BC64F311B8D281503A723 /* Pods-WhoooshTests.release.xcconfig */,
+				88042B230B1098754F564B50 /* Pods-WhoooshUITests.debug.xcconfig */,
+				A8C2BE0B413FF0AADA9D9807 /* Pods-WhoooshUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A558C9EA221D3C7B0052D29E = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +115,8 @@
 				A558CA0C221D3C7C0052D29E /* WhoooshTests */,
 				A558CA17221D3C7C0052D29E /* WhoooshUITests */,
 				A558C9F4221D3C7B0052D29E /* Products */,
+				7551F1332ADA5F4B3D5466C5 /* Pods */,
+				F6C39E7FB21585CECE9B80F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +179,16 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		F6C39E7FB21585CECE9B80F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA50AFE0E19755740BB01AC5 /* Pods_Whooosh.framework */,
+				7A7E204D0A0605922B1EA28F /* Pods_WhoooshTests.framework */,
+				EBE01C646C16220521E72E61 /* Pods_WhoooshUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,9 +196,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A558CA1D221D3C7C0052D29E /* Build configuration list for PBXNativeTarget "Whooosh" */;
 			buildPhases = (
+				0D339B38C597856459F36125 /* [CP] Check Pods Manifest.lock */,
 				A558C9EF221D3C7B0052D29E /* Sources */,
 				A558C9F0221D3C7B0052D29E /* Frameworks */,
 				A558C9F1221D3C7B0052D29E /* Resources */,
+				36B377B3B3B3A9C93F7E3CBD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,6 +215,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A558CA20221D3C7C0052D29E /* Build configuration list for PBXNativeTarget "WhoooshTests" */;
 			buildPhases = (
+				9AEA088C006BE299D272DA97 /* [CP] Check Pods Manifest.lock */,
 				A558CA05221D3C7C0052D29E /* Sources */,
 				A558CA06221D3C7C0052D29E /* Frameworks */,
 				A558CA07221D3C7C0052D29E /* Resources */,
@@ -191,6 +234,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A558CA23221D3C7C0052D29E /* Build configuration list for PBXNativeTarget "WhoooshUITests" */;
 			buildPhases = (
+				1F327D0DFF304E5A18E701B4 /* [CP] Check Pods Manifest.lock */,
 				A558CA10221D3C7C0052D29E /* Sources */,
 				A558CA11221D3C7C0052D29E /* Frameworks */,
 				A558CA12221D3C7C0052D29E /* Resources */,
@@ -274,6 +318,107 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D339B38C597856459F36125 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Whooosh-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1F327D0DFF304E5A18E701B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WhoooshUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36B377B3B3B3A9C93F7E3CBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Whooosh/Pods-Whooosh-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Arrow/Arrow.framework",
+				"${BUILT_PRODUCTS_DIR}/ClusterKit/ClusterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FFPopup/FFPopup.framework",
+				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Arrow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ClusterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FFPopup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Whooosh/Pods-Whooosh-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AEA088C006BE299D272DA97 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WhoooshTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A558C9EF221D3C7B0052D29E /* Sources */ = {
@@ -458,6 +603,7 @@
 		};
 		A558CA1E221D3C7C0052D29E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED5BFB4F14B03B0BD5BC731D /* Pods-Whooosh.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -476,6 +622,7 @@
 		};
 		A558CA1F221D3C7C0052D29E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D6ABE1788885DD08F684097 /* Pods-Whooosh.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -494,6 +641,7 @@
 		};
 		A558CA21221D3C7C0052D29E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4605DD9A9724EE90E011D536 /* Pods-WhoooshTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +663,7 @@
 		};
 		A558CA22221D3C7C0052D29E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F74BC64F311B8D281503A723 /* Pods-WhoooshTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -536,6 +685,7 @@
 		};
 		A558CA24221D3C7C0052D29E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88042B230B1098754F564B50 /* Pods-WhoooshUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -556,6 +706,7 @@
 		};
 		A558CA25221D3C7C0052D29E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8C2BE0B413FF0AADA9D9807 /* Pods-WhoooshUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
