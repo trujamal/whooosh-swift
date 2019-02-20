@@ -8,3 +8,7 @@
 
 import Foundation
 import UIKit
+
+let mapBoxAPI = "pk.eyJ1IjoidHJ1amFtYWwiLCJhIjoiY2pzY3dqOGpqMDQ3YTQ0dGgzZGRkNzR5eSJ9.PDeZs-XPSpOK-RKQUIywEg"
+let gcpAPI = "AIzaSyB1NXJyWP0xFf7l5xXRaeZga1bWVLv2LT8"
+let lyftAPI = "8bk0YGWvpCTJW2FJRUZzeVLeoyLuKlFc"

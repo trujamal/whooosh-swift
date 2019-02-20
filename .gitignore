@@ -1,0 +1,7 @@
+Constants.swift
+Mapbox.framework
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+Pods/
