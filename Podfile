@@ -6,6 +6,7 @@ target 'Whooosh' do
   use_frameworks!
 
   # Pods for Whooosh
+  pod 'Mapbox-iOS-SDK'
   pod 'Arrow'
   pod 'ClusterKit'
   pod 'FFPopup'

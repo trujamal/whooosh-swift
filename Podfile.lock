@@ -6,6 +6,7 @@ PODS:
   - FFPopup (1.0.0)
   - FontAwesome.swift (1.4.8)
   - Kingfisher (5.0.1)
+  - Mapbox-iOS-SDK (4.7.1)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - FFPopup
   - FontAwesome.swift
   - Kingfisher
+  - Mapbox-iOS-SDK
   - SwiftyJSON
 
 SPEC REPOS:
@@ -23,6 +25,7 @@ SPEC REPOS:
     - FFPopup
     - FontAwesome.swift
     - Kingfisher
+    - Mapbox-iOS-SDK
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -31,8 +34,9 @@ SPEC CHECKSUMS:
   FFPopup: f1a9c2bb1df9d9cd254f15081e74112d9ccb6969
   FontAwesome.swift: fb8637bffb9a588c7e8c753c084565b27b20a39d
   Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
+  Mapbox-iOS-SDK: f9292a75e8cd5eb828f4432623bfc48aac42146a
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 3df6074eaf19642d3e409735fa466145cc8ab8ae
+PODFILE CHECKSUM: cf97fada6f70b673f7f75988331662450cf4809f
 
 COCOAPODS: 1.5.3
