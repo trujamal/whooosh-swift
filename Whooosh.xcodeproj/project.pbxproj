@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		34B5E5C3D31B2E56FB729400 /* Pods_Whooosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA50AFE0E19755740BB01AC5 /* Pods_Whooosh.framework */; };
 		7434DD84D33DE4409E31F9E1 /* Pods_WhoooshTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7E204D0A0605922B1EA28F /* Pods_WhoooshTests.framework */; };
+		A52EA673221FEDB200C5055E /* Color-Management.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52EA672221FEDB200C5055E /* Color-Management.swift */; };
+		A52EA676221FF19C00C5055E /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52EA675221FF19C00C5055E /* Inbox.swift */; };
+		A52EA678221FF1B000C5055E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52EA677221FF1B000C5055E /* Profile.swift */; };
 		A558C9F7221D3C7B0052D29E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558C9F6221D3C7B0052D29E /* AppDelegate.swift */; };
-		A558C9F9221D3C7B0052D29E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558C9F8221D3C7B0052D29E /* FirstViewController.swift */; };
-		A558C9FB221D3C7B0052D29E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558C9FA221D3C7B0052D29E /* SecondViewController.swift */; };
+		A558C9F9221D3C7B0052D29E /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558C9F8221D3C7B0052D29E /* Jobs.swift */; };
+		A558C9FB221D3C7B0052D29E /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558C9FA221D3C7B0052D29E /* Community.swift */; };
 		A558C9FE221D3C7B0052D29E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A558C9FC221D3C7B0052D29E /* Main.storyboard */; };
 		A558CA00221D3C7C0052D29E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A558C9FF221D3C7C0052D29E /* Assets.xcassets */; };
 		A558CA03221D3C7C0052D29E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A558CA01221D3C7C0052D29E /* LaunchScreen.storyboard */; };
@@ -45,10 +48,13 @@
 		4605DD9A9724EE90E011D536 /* Pods-WhoooshTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhoooshTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhoooshTests/Pods-WhoooshTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A7E204D0A0605922B1EA28F /* Pods_WhoooshTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhoooshTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88042B230B1098754F564B50 /* Pods-WhoooshUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhoooshUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhoooshUITests/Pods-WhoooshUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A52EA672221FEDB200C5055E /* Color-Management.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Management.swift"; sourceTree = "<group>"; };
+		A52EA675221FF19C00C5055E /* Inbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
+		A52EA677221FF1B000C5055E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		A558C9F3221D3C7B0052D29E /* Whooosh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whooosh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A558C9F6221D3C7B0052D29E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A558C9F8221D3C7B0052D29E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		A558C9FA221D3C7B0052D29E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		A558C9F8221D3C7B0052D29E /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
+		A558C9FA221D3C7B0052D29E /* Community.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
 		A558C9FD221D3C7B0052D29E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A558C9FF221D3C7C0052D29E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A558CA02221D3C7C0052D29E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -108,6 +114,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A52EA674221FF16800C5055E /* NavigationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A558C9F8221D3C7B0052D29E /* Jobs.swift */,
+				A558C9FA221D3C7B0052D29E /* Community.swift */,
+				A52EA675221FF19C00C5055E /* Inbox.swift */,
+				A52EA677221FF1B000C5055E /* Profile.swift */,
+			);
+			path = NavigationControllers;
+			sourceTree = "<group>";
+		};
 		A558C9EA221D3C7B0052D29E = {
 			isa = PBXGroup;
 			children = (
@@ -136,8 +153,7 @@
 				A558CA27221D3CA40052D29E /* Components */,
 				A558CA26221D3C960052D29E /* Dependencies */,
 				A558C9F6221D3C7B0052D29E /* AppDelegate.swift */,
-				A558C9F8221D3C7B0052D29E /* FirstViewController.swift */,
-				A558C9FA221D3C7B0052D29E /* SecondViewController.swift */,
+				A52EA674221FF16800C5055E /* NavigationControllers */,
 				A558C9FC221D3C7B0052D29E /* Main.storyboard */,
 				A558C9FF221D3C7C0052D29E /* Assets.xcassets */,
 				A558CA01221D3C7C0052D29E /* LaunchScreen.storyboard */,
@@ -168,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				A558CA28221D3D6B0052D29E /* Constants.swift */,
+				A52EA672221FEDB200C5055E /* Color-Management.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -429,9 +446,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A558C9FB221D3C7B0052D29E /* SecondViewController.swift in Sources */,
+				A52EA676221FF19C00C5055E /* Inbox.swift in Sources */,
+				A52EA673221FEDB200C5055E /* Color-Management.swift in Sources */,
+				A558C9FB221D3C7B0052D29E /* Community.swift in Sources */,
+				A52EA678221FF1B000C5055E /* Profile.swift in Sources */,
 				A558C9F7221D3C7B0052D29E /* AppDelegate.swift in Sources */,
-				A558C9F9221D3C7B0052D29E /* FirstViewController.swift in Sources */,
+				A558C9F9221D3C7B0052D29E /* Jobs.swift in Sources */,
 				A558CA29221D3D6B0052D29E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
