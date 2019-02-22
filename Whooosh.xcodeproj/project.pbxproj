@@ -12,6 +12,14 @@
 		A52EA673221FEDB200C5055E /* Color-Management.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52EA672221FEDB200C5055E /* Color-Management.swift */; };
 		A52EA676221FF19C00C5055E /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52EA675221FF19C00C5055E /* Inbox.swift */; };
 		A52EA678221FF1B000C5055E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52EA677221FF1B000C5055E /* Profile.swift */; };
+		A52EA67A221FF33700C5055E /* modalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52EA679221FF33700C5055E /* modalInfoView.swift */; };
+		A52EA67C221FF34A00C5055E /* modalInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52EA67B221FF34A00C5055E /* modalInfoView.xib */; };
+		A52EA67E221FF3B700C5055E /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52EA67D221FF3B700C5055E /* UserClass.swift */; };
+		A52EA680221FF41500C5055E /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52EA67F221FF41500C5055E /* UIExtensions.swift */; };
+		A52EA682221FF49D00C5055E /* jobsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52EA681221FF49D00C5055E /* jobsTableView.swift */; };
+		A52EA684221FF4BA00C5055E /* jobsFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52EA683221FF4BA00C5055E /* jobsFilterView.swift */; };
+		A52EA686221FF4D500C5055E /* searchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52EA685221FF4D500C5055E /* searchController.swift */; };
+		A52EA688221FF51B00C5055E /* walkThroughViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52EA687221FF51B00C5055E /* walkThroughViews.swift */; };
 		A558C9F7221D3C7B0052D29E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558C9F6221D3C7B0052D29E /* AppDelegate.swift */; };
 		A558C9F9221D3C7B0052D29E /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558C9F8221D3C7B0052D29E /* Jobs.swift */; };
 		A558C9FB221D3C7B0052D29E /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = A558C9FA221D3C7B0052D29E /* Community.swift */; };
@@ -51,6 +59,14 @@
 		A52EA672221FEDB200C5055E /* Color-Management.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Management.swift"; sourceTree = "<group>"; };
 		A52EA675221FF19C00C5055E /* Inbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
 		A52EA677221FF1B000C5055E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		A52EA679221FF33700C5055E /* modalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modalInfoView.swift; sourceTree = "<group>"; };
+		A52EA67B221FF34A00C5055E /* modalInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = modalInfoView.xib; sourceTree = "<group>"; };
+		A52EA67D221FF3B700C5055E /* UserClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
+		A52EA67F221FF41500C5055E /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		A52EA681221FF49D00C5055E /* jobsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jobsTableView.swift; sourceTree = "<group>"; };
+		A52EA683221FF4BA00C5055E /* jobsFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jobsFilterView.swift; sourceTree = "<group>"; };
+		A52EA685221FF4D500C5055E /* searchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchController.swift; sourceTree = "<group>"; };
+		A52EA687221FF51B00C5055E /* walkThroughViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walkThroughViews.swift; sourceTree = "<group>"; };
 		A558C9F3221D3C7B0052D29E /* Whooosh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whooosh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A558C9F6221D3C7B0052D29E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A558C9F8221D3C7B0052D29E /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
@@ -184,7 +200,9 @@
 			isa = PBXGroup;
 			children = (
 				A558CA28221D3D6B0052D29E /* Constants.swift */,
+				A52EA67F221FF41500C5055E /* UIExtensions.swift */,
 				A52EA672221FEDB200C5055E /* Color-Management.swift */,
+				A52EA67D221FF3B700C5055E /* UserClass.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -192,6 +210,12 @@
 		A558CA27221D3CA40052D29E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A52EA679221FF33700C5055E /* modalInfoView.swift */,
+				A52EA681221FF49D00C5055E /* jobsTableView.swift */,
+				A52EA683221FF4BA00C5055E /* jobsFilterView.swift */,
+				A52EA67B221FF34A00C5055E /* modalInfoView.xib */,
+				A52EA685221FF4D500C5055E /* searchController.swift */,
+				A52EA687221FF51B00C5055E /* walkThroughViews.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -315,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A558CA03221D3C7C0052D29E /* LaunchScreen.storyboard in Resources */,
+				A52EA67C221FF34A00C5055E /* modalInfoView.xib in Resources */,
 				A558CA00221D3C7C0052D29E /* Assets.xcassets in Resources */,
 				A558C9FE221D3C7B0052D29E /* Main.storyboard in Resources */,
 			);
@@ -449,9 +474,16 @@
 				A52EA676221FF19C00C5055E /* Inbox.swift in Sources */,
 				A52EA673221FEDB200C5055E /* Color-Management.swift in Sources */,
 				A558C9FB221D3C7B0052D29E /* Community.swift in Sources */,
+				A52EA680221FF41500C5055E /* UIExtensions.swift in Sources */,
 				A52EA678221FF1B000C5055E /* Profile.swift in Sources */,
+				A52EA686221FF4D500C5055E /* searchController.swift in Sources */,
 				A558C9F7221D3C7B0052D29E /* AppDelegate.swift in Sources */,
+				A52EA684221FF4BA00C5055E /* jobsFilterView.swift in Sources */,
+				A52EA67E221FF3B700C5055E /* UserClass.swift in Sources */,
 				A558C9F9221D3C7B0052D29E /* Jobs.swift in Sources */,
+				A52EA67A221FF33700C5055E /* modalInfoView.swift in Sources */,
+				A52EA688221FF51B00C5055E /* walkThroughViews.swift in Sources */,
+				A52EA682221FF49D00C5055E /* jobsTableView.swift in Sources */,
 				A558CA29221D3D6B0052D29E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
