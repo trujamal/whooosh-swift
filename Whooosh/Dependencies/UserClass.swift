@@ -9,27 +9,51 @@ import Foundation
 import UIKit
 
 class UserClass: NSObject {
-
-}
-
-class Trainers: NSObject {
-    
     var first_name: String?
     var last_name: String?
     var phone: Int?
     var email: String?
     var location: Int?
-    //    var certifcations: Certifications[]?
 }
+
+class Jobs: NSObject {
+    var jobTitle: String?
+    var jobDistance: Int?
+    var jobDescription: Int?
+    var jobApplyLink: Int?
+    var latitude: Float?
+    var longitude: Float?
+}
+
+class Trip: NSObject  {
+    var startingTime: Int?
+    var endingTime: Int?
+    var desiredStart: Int?
+    var desiredEnd: Int?
+    var startingAddress: String?
+    var endingAddress: String?
+    var calanderDate: String?
+}
+
+class RideSharing: NSObject {
+    var lyftPrice: Double?
+    var uberPrice: Double?
+    var averageEconomy: Double?
+}
+
+class HousingManagement: NSObject {
+    var housingPrice: Double?
+    var housingBedRooms: Int?
+    var housingBathrooms: Int?
+    var neighborhoodQuality: Int?
+}
+
 
 class Users: NSObject {
-    var first_name: String?
-    var last_name: String?
+    var name: String?
     var phone: Int?
     var email: String?
     var location: Int?
-    var user_age: Int?
-    var user_weight: Int?
-    var user_height: Int?
-    
+    var join_date: String?
+    var verified: Bool?
 }
