@@ -20,7 +20,7 @@ class Jobs: NSObject {
     var jobTitle: String?
     var jobDistance: Int?
     var jobDescription: Int?
-    var jobApplyLink: Int?
+    var jobApplyLink: String?
     var latitude: Float?
     var longitude: Float?
 }
@@ -46,6 +46,8 @@ class HousingManagement: NSObject {
     var housingBedRooms: Int?
     var housingBathrooms: Int?
     var neighborhoodQuality: Int?
+    var address: String?
+    var location: [String]?
 }
 
 

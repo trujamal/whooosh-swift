@@ -13,7 +13,10 @@ class inboxController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+        title = "Inbox"
+        
     }
     
 

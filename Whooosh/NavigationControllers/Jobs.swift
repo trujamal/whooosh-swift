@@ -14,12 +14,19 @@ class jobController: UIViewController, CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
 
-    @IBOutlet weak var mapboxView: UIView!
+
+    @IBOutlet weak var navigationBar: UINavigationItem!
+    @IBOutlet weak var mapboxView: MGLMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeMapBoxCompoenents()
-        alertCameraAccessNeeded()
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+        title = "Jobs"
+        let searchbarComponent = UISearchController(searchResultsController: nil)
+        searchbarComponent.searchResultsUpdater = self as? UISearchResultsUpdating
+        self.navigationItem.searchController = searchbarComponent
     }
     
     private func initializeMapBoxCompoenents() {
@@ -28,22 +35,13 @@ class jobController: UIViewController, CLLocationManagerDelegate {
         mapboxView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
-    func alertCameraAccessNeeded() {
-        let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation:CLLocationCoordinate2D = manager.location!.coordinate
         
-        let alert = UIAlertController(
-            title: "Need Camera Access",
-            message: "Camera access is required to make full use of this app.",
-            preferredStyle: UIAlertController.Style.alert
-        )
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Allow Camera", style: .cancel, handler: { (alert) -> Void in
-            UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: nil)
-        }))
-        
-        present(alert, animated: true, completion: nil)
-    }
+        mapboxView.setCenter(CLLocationCoordinate2D(latitude: userLocation.latitude, longitude: userLocation.longitude), zoomLevel: 9, animated: true)
+}
+    
+
     
     func enableLocationServices() {
         locationManager.delegate = self
@@ -76,12 +74,17 @@ class jobController: UIViewController, CLLocationManagerDelegate {
     }
 
     private func enableMyWhenInUseFeatures() {
-        
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
     }
 
     private func enableMyAlwaysFeatures() {
-        
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
     }
 
 }
-

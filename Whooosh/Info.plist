@@ -8,8 +8,6 @@
 	<string>Shows your location on the map and helps improve OpenStreetMap.</string>
 	<key>MGLMapboxAccessToken</key>
 	<string>pk.eyJ1IjoidHJ1amFtYWwiLCJhIjoiY2pzY3dqOGpqMDQ3YTQ0dGgzZGRkNzR5eSJ9.PDeZs-XPSpOK-RKQUIywEg</string>
-	<key>NSCameraUsageDescription</key>
-	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

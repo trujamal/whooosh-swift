@@ -10,6 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="7mN-Q2-zBD">
+            <objects>
+                <viewController id="1b6-lT-Bcl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cr2-gU-qua">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="cT3-oI-97f"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cdB-Mh-Z98" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1689" y="-1744"/>
+        </scene>
         <!--Job Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
@@ -42,6 +57,7 @@
                     <navigationItem key="navigationItem" id="ZdJ-hR-gUB"/>
                     <connections>
                         <outlet property="mapboxView" destination="Gfd-GB-g7L" id="2LM-CO-Vh9"/>
+                        <outlet property="navigationBar" destination="ZdJ-hR-gUB" id="yjG-OJ-aWc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -83,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688.8" y="-322.48875562218893"/>
+            <point key="canvasLocation" x="2628" y="-322.48875562218893"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -103,7 +119,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-130" y="109"/>
+            <point key="canvasLocation" x="808.79999999999995" y="108.39580209895054"/>
         </scene>
         <!--Inbox Controller-->
         <scene sceneID="TqZ-OU-pRk">
@@ -140,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nng-dY-2u8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1688.8" y="460.11994002998506"/>
+            <point key="canvasLocation" x="2628" y="460.11994002998506"/>
         </scene>
         <!--Profile Controller-->
         <scene sceneID="Bpg-k4-4NS">
@@ -179,11 +195,11 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="1194.1529235382309"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Jobs-->
         <scene sceneID="ueb-lq-dHa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5w4-pK-WW3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="direction" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Jobs" image="direction" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OlC-dF-Anj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -198,11 +214,11 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-1026.8365817091455"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Community-->
         <scene sceneID="PUO-0f-lwX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Dy-D7-fEd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Community" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Community" image="Community" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xry-31-S5x">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -215,13 +231,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0d-1J-fen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="-322.48875562218893"/>
+            <point key="canvasLocation" x="1688.8" y="-322.48875562218893"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Inbox-->
         <scene sceneID="eqx-Hh-bjs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eBd-1S-Gta" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="inbox" id="X1t-iI-1HM"/>
+                    <tabBarItem key="tabBarItem" title="Inbox" image="inbox" id="X1t-iI-1HM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uVo-zw-TdI">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -234,13 +250,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBu-Gs-g82" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="460.11994002998506"/>
+            <point key="canvasLocation" x="1688.8" y="460.11994002998506"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile-->
         <scene sceneID="tQ9-QF-oY4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FYK-YI-C0G" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="profile" id="ENd-vi-WlG"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="ENd-vi-WlG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rzw-Lr-MSr">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -254,6 +270,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0L-30-6Cv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="1194.1529235382309"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bri-De-Gd8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qg5-HT-S3B" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GBL-OA-Tio">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YpQ-tM-vhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2527.1999999999998" y="98.50074962518741"/>
         </scene>
     </scenes>
     <resources>
