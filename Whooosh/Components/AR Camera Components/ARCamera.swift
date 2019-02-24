@@ -15,35 +15,21 @@ import Vision
 
 
 struct ListObject: Decodable {
-    let id: Int
     let address: String!
-    let rent: Int!
-    let valuation: Int!
-    let bedrooms: Int!
-    let bathrooms: Int!
-    let area: Int!
-    let numFloors: Int!
+    let price: Int!
     
     public enum CodingKeys: String, CodingKey {
-        case id = "_id"
         case address = "address"
-        case rent  = "rent"
-        case valuation = "valuation"
-        case bedrooms = "bedrooms"
-        case bathrooms = "bathrooms"
-        case area = "area"
-        case numFloors = "numFloors"
+        case price  = "price"
     }
 }
-
-
 
 class ARController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, CLLocationManagerDelegate {
     
     //    var listing_Array = [ListObject]() //Array of dictionary
-    var arrRes = [ListObject]() //Array of dictionary
+    var housingArrayInfo = [ListObject]() //Array of dictionary
     
-    let textDepth : Float = 0.01 // the 'depth' of 3D text
+    let textDepth : Float = 0.05 // the 'depth' of 3D text
     
     // COREML
     var visionRequests = [VNRequest]()
@@ -72,6 +58,25 @@ class ARController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, CLLo
     override func viewDidLoad() {
         super.viewDidLoad()
         intialDataLoader()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        // Create a session configuration
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
+        configuration.worldAlignment = .gravityAndHeading
+        
+        // Run the view's session
+        sceneView.session.run(configuration)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+          self.navigationController?.setNavigationBarHidden(false, animated: true)
+        // Pause the view's session
+        sceneView.session.pause()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -159,7 +164,7 @@ class ARController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, CLLo
                     let decoder = JSONDecoder()
                     
                     var converterHandler = try decoder.decode(ListObject.self, from: data)
-                    self.arrRes = [converterHandler]
+                    self.housingArrayInfo = [converterHandler]
                     
 //                    self.listing_CollectionVW.reloadData()
                     
@@ -207,7 +212,7 @@ class ARController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, CLLo
         sceneView.session.add(anchor: anchor)
         
         fetchJSON()
-        print(arrRes.count)
+        print(housingArrayInfo.count)
 //        listing_CollectionVW.isHidden = false
         //if tapGesture returns a value{
         //infoView.isHidden = false
@@ -326,23 +331,6 @@ class ARController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, CLLo
     }
     
     
-    func intialDesignLoader() {
-        
-//        discButton.layer.cornerRadius = discButton.bounds.size.height/2
-//        discButton.clipsToBounds = true
-//
-//
-//        moreButton.layer.cornerRadius = moreButton.bounds.size.height/2
-//        moreButton.clipsToBounds = true
-//
-//
-//        camButton.layer.cornerRadius = camButton.bounds.size.height/2
-//        camButton.clipsToBounds = true
-//        camButton.isEnabled = false
-        
-    }
-    
-    
     @IBAction func backSwiped(_ sender: Any) {
         performSegue(withIdentifier: "camToDisc", sender: self)
     }
@@ -361,27 +349,6 @@ class ARController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, CLLo
         performSegue(withIdentifier: "homeToMore", sender: self)
         
     }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = .horizontal
-        configuration.worldAlignment = .gravityAndHeading
-        
-        // Run the view's session
-        sceneView.session.run(configuration)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // Pause the view's session
-        sceneView.session.pause()
-    }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -499,33 +466,34 @@ class ARController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, CLLo
 }
 extension ARController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrRes.count
+        return housingArrayInfo.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sectionCell", for: indexPath) as! ARControllerCollectionVW
-        let valz = arrRes[indexPath.row]
+        let valz = housingArrayInfo[indexPath.row]
         
         cell.listing_Title.text = "\(valz.address!)"
-        cell.listing_Location.text = "🏠 House is in the area \(valz.area!)"
-        if(valz.valuation == 0 || valz.valuation == nil) {
-            
-            let currencyFormatter = NumberFormatter()
-            currencyFormatter.usesGroupingSeparator = true
-            currencyFormatter.numberStyle = .currency
-            // localize to your grouping and decimal separator
-            currencyFormatter.locale = Locale.current
-            
-            // We'll force unwrap with the !, if you've got defined data you may need more error checking
-            let priceString = currencyFormatter.string(from: valz.rent! as NSNumber)!
-            
-            cell.listing_Variables.text = "Price: $\(priceString) \(valz.bedrooms!)bd \(valz.bathrooms!)ba"
-            
-        }
-        cell.listing_Variables.text = "$\(valz.valuation!) \(valz.bedrooms!)bd \(valz.bathrooms!)ba"
+        cell.listing_Location.text = "🏠 House is in the area \(valz.price!)"
+//        if(valz.valuation == 0 || valz.valuation == nil) {
+//
+//            let currencyFormatter = NumberFormatter()
+//            currencyFormatter.usesGroupingSeparator = true
+//            currencyFormatter.numberStyle = .currency
+//            // localize to your grouping and decimal separator
+//            currencyFormatter.locale = Locale.current
+//
+//
+//            // We'll force unwrap with the !, if you've got defined data you may need more error checking
+//            let priceString = currencyFormatter.string(from: valz.rent! as NSNumber)!
+//
+//            cell.listing_Variables.text = "Price: $\(priceString) \(valz.bedrooms!)bd \(valz.bathrooms!)ba"
+//
+//        }
+//        cell.listing_Variables.text = "$\(valz.valuation!) \(valz.bedrooms!)bd \(valz.bathrooms!)ba"
         
         
-        //        let imageURL = valz
+        //        let imageURL = valz 
         //        let url = URL(string: imageURL!)
         
         //        let task = URLSession.shared.dataTask(with: url!) { data, response, error in

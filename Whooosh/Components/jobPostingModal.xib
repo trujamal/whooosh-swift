@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.47"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Iz-gG-5Pf" customClass="jobPostingModal" customModule="Whooosh" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="542" width="414" height="354"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c20-Fb-q9h">
+                            <rect key="frame" x="0.0" y="229" width="414" height="65"/>
+                            <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <state key="normal" title="Continue">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="1Hq-sK-gNO">
+                            <rect key="frame" x="187.5" y="287" width="39" height="37"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="37" id="Hma-LT-7KJ"/>
+                                <constraint firstAttribute="width" constant="39" id="d0b-mt-KJT"/>
+                            </constraints>
+                            <color key="pageIndicatorTintColor" red="0.74117647060000003" green="0.74901960779999999" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="currentPageIndicatorTintColor" red="0.95686274510000002" green="0.24313725489999999" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </pageControl>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxd-3e-CE7">
+                            <rect key="frame" x="36" y="31" width="83" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="28" id="RAi-US-vgh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance Away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdj-dO-gRh">
+                            <rect key="frame" x="36" y="67" width="97" height="17"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="17" id="G7D-gm-fEy"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                            <color key="textColor" red="0.74117647060000003" green="0.74901960779999999" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07X-il-9tu">
+                            <rect key="frame" x="36" y="92" width="342" height="91"/>
+                            <string key="text">Intel is looking for a multi-talented Field Service 
+Engineer to act as a Subject Matter expert in the 
+Installation, test, debugging, and repair of Distributed 
+Common Ground Systems – Army (DCGS-A) fielded 
+systems. the Project Management Office for 
+Distributed Common Ground Systems – Army 
+(DCGS-A).</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMd-pg-g4x">
+                            <rect key="frame" x="0.0" y="191" width="414" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="rvx-bQ-Qvc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Apply Now">
+                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="c20-Fb-q9h" firstAttribute="centerX" secondItem="1Hq-sK-gNO" secondAttribute="centerX" id="3WX-DM-65F"/>
+                        <constraint firstItem="Vdj-dO-gRh" firstAttribute="top" secondItem="Oxd-3e-CE7" secondAttribute="bottom" constant="8" symbolic="YES" id="996-dG-lEs"/>
+                        <constraint firstItem="Oxd-3e-CE7" firstAttribute="leading" secondItem="Vdj-dO-gRh" secondAttribute="leading" id="9rw-Ed-dfk"/>
+                        <constraint firstAttribute="trailing" secondItem="SMd-pg-g4x" secondAttribute="trailing" id="BmT-8W-54G"/>
+                        <constraint firstItem="SMd-pg-g4x" firstAttribute="leading" secondItem="0Iz-gG-5Pf" secondAttribute="leading" id="Bp3-Fn-kZC"/>
+                        <constraint firstItem="Vdj-dO-gRh" firstAttribute="leading" secondItem="07X-il-9tu" secondAttribute="leading" id="GEc-lL-rXn"/>
+                        <constraint firstItem="c20-Fb-q9h" firstAttribute="top" secondItem="SMd-pg-g4x" secondAttribute="bottom" constant="8" symbolic="YES" id="LzN-aF-Ifh"/>
+                        <constraint firstItem="Oxd-3e-CE7" firstAttribute="top" secondItem="0Iz-gG-5Pf" secondAttribute="top" constant="31" id="NrJ-zt-oeG"/>
+                        <constraint firstItem="SMd-pg-g4x" firstAttribute="top" secondItem="07X-il-9tu" secondAttribute="bottom" constant="8" symbolic="YES" id="SKB-FC-a0V"/>
+                        <constraint firstItem="Oxd-3e-CE7" firstAttribute="leading" secondItem="0Iz-gG-5Pf" secondAttribute="leading" constant="36" id="dV4-Bo-6lH"/>
+                        <constraint firstItem="07X-il-9tu" firstAttribute="top" secondItem="Vdj-dO-gRh" secondAttribute="bottom" constant="8" symbolic="YES" id="dn4-tl-ZD6"/>
+                        <constraint firstItem="07X-il-9tu" firstAttribute="centerX" secondItem="SMd-pg-g4x" secondAttribute="centerX" id="ejo-hC-lBx"/>
+                        <constraint firstAttribute="bottom" secondItem="1Hq-sK-gNO" secondAttribute="bottom" constant="30" id="j83-To-dbS"/>
+                        <constraint firstItem="SMd-pg-g4x" firstAttribute="trailing" secondItem="c20-Fb-q9h" secondAttribute="trailing" id="loD-Rg-mbx"/>
+                        <constraint firstItem="SMd-pg-g4x" firstAttribute="leading" secondItem="c20-Fb-q9h" secondAttribute="leading" id="pW6-lw-I3t"/>
+                        <constraint firstAttribute="bottom" secondItem="c20-Fb-q9h" secondAttribute="bottom" constant="60" id="v1Y-Nl-dnD"/>
+                        <constraint firstItem="1Hq-sK-gNO" firstAttribute="top" secondItem="SMd-pg-g4x" secondAttribute="bottom" constant="66" id="zfe-zr-8fD"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="0Iz-gG-5Pf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AhC-Hz-sgi"/>
+                <constraint firstAttribute="bottom" secondItem="0Iz-gG-5Pf" secondAttribute="bottom" id="BjY-tc-N0v"/>
+                <constraint firstAttribute="trailing" secondItem="0Iz-gG-5Pf" secondAttribute="trailing" id="J65-h8-RXU"/>
+                <constraint firstItem="0Iz-gG-5Pf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="498" id="VsA-Rl-6eK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="34.782608695652179" y="34.821428571428569"/>
+        </view>
+    </objects>
+</document>
