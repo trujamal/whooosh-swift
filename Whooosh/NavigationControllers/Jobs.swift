@@ -10,12 +10,14 @@ import UIKit
 import Mapbox
 import CoreLocation
 import FFPopup
-
+import ClusterKit
 
 class jobController: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate {
 
     let locationManager = CLLocationManager()
-
+    fileprivate var filtered = [String]()
+    fileprivate var filterring = false
+    var jobsArray = [ListObject]() //Array of dictionary
 
     @IBOutlet weak var listViewButton: UIBarButtonItem!
     @IBOutlet weak var navigationBar: UINavigationItem!
@@ -25,10 +27,11 @@ class jobController: UIViewController, CLLocationManagerDelegate, MGLMapViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeMapBoxCompoenents()
+        clusterKitSetup()
         addSwipe()
         navigationInit()
         mapboxView.delegate = self
-
+        
     }
     
     private func navigationInit() {
@@ -39,6 +42,17 @@ self.navigationController?.navigationBar.prefersLargeTitles = true
         searchbarComponent.searchResultsUpdater = self as? UISearchResultsUpdating
         self.navigationItem.searchController = searchbarComponent
     }
+    
+    private func clusterKitSetup() {
+        let algorithm = CKNonHierarchicalDistanceBasedAlgorithm()
+        algorithm.cellSize = 50
+//        mapboxView.clusterManager.algorithm = algorithm
+//        mapboxView.clusterManager.marginFactor = 1
+//
+//        loadData()
+    }
+    
+    
     
     func addSwipe() {
         let directions: [UISwipeGestureRecognizer.Direction] = [.right, .left, .up, .down]
@@ -136,4 +150,18 @@ self.navigationController?.navigationBar.prefersLargeTitles = true
     
     
 
+}
+
+
+extension jobController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let text = searchController.searchBar.text, !text.isEmpty {
+            self.filterring = true
+        }
+        else {
+            self.filterring = false
+            self.filtered = [String]()
+        }
+        self.mapboxView.reloadInputViews()
+    }
 }

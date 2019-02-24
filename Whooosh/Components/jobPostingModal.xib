@@ -103,6 +103,12 @@ Distributed Common Ground Systems – Army
                             <integer key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="JobTitle" destination="Oxd-3e-CE7" id="mjX-ga-zuS"/>
+                        <outlet property="jobApplyLink" destination="SMd-pg-g4x" id="aCW-Mt-TuL"/>
+                        <outlet property="jobDescription" destination="07X-il-9tu" id="D1m-Ho-wMU"/>
+                        <outlet property="jobDistance" destination="Vdj-dO-gRh" id="GUJ-ta-zWw"/>
+                    </connections>
                 </view>
             </subviews>
             <constraints>

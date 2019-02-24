@@ -15,7 +15,10 @@ class ModalClass: UIViewController {
 }
 
 class jobPostingModal: UIView {
-    
+    @IBOutlet weak var JobTitle: UILabel?
+    @IBOutlet weak var jobDistance: UILabel?
+    @IBOutlet weak var jobDescription: UILabel?
+    @IBOutlet weak var jobApplyLink: UIButton?
     
 }
 

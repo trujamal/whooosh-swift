@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import CoreData
+import CoreLocation
 
-class jobsTableView: UITableViewController {
-    var arrRes = [ListObject]() //Array of dictionary
+
+class jobsTableView: UITableViewController, CLLocationManagerDelegate    {
+   
+    // Initialization Manager
+    var jobsArray = [ListObject]() //Array of dictionary
+    var locationManager = CLLocationManager()
 
     @IBOutlet var jobsTableView: UITableView!
     @IBOutlet weak var editFilter: UIBarButtonItem!
@@ -17,7 +23,7 @@ class jobsTableView: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        getUserLocationPOST()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never
         title = "Jobs"
@@ -27,10 +33,32 @@ class jobsTableView: UITableViewController {
         self.navigationItem.searchController = searchbarComponent
 
         
+        
+        
         tableView.estimatedRowHeight = 150
         tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    fileprivate func getUserLocationPOST() {
+        let locManager = CLLocationManager()
+        var currentLocation: CLLocation!
+        
+        if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() ==  .authorizedAlways){
+            
+            currentLocation = locManager.location
+            let locationString =  ["\(currentLocation.coordinate.latitude)","\(currentLocation.coordinate.longitude)"]
+            
+            let fakeValues = ["Fullstack","Developer"]
+            let defaultRadius = 30
+            handleAPIPush(Location: locationString, Keyword: fakeValues, Radius:defaultRadius)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Unable to access your current location")
     }
 
     @IBAction func editFilterHandler(_ sender: Any) {
@@ -52,12 +80,11 @@ class jobsTableView: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return jobsArray.count
     }
     
     @objc func handleALERT() {
@@ -69,10 +96,46 @@ class jobsTableView: UITableViewController {
         
         self.present(alert, animated: true)
     }
+    
+    fileprivate func handleAPIPush(Location:[String], Keyword:[String], Radius:Int) {
+        
+        let url = URL(string: jobsListAPI)!
+        var request = URLRequest(url: url)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        let parameters: [String: Any] = [
+            "location": Location,
+            "radius": Radius,
+            "keywords": Keyword
+        ]
+        request.httpBody = parameters.percentEscaped().data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data,
+                let response = response as? HTTPURLResponse,
+                error == nil else {                                              // check for fundamental networking error
+                    print("error", error ?? "Unknown error")
+                    return
+            }
+            
+            guard (200 ... 299) ~= response.statusCode else {                    // check for http errors
+                print("statusCode should be 2xx, but is \(response.statusCode)")
+                print("response = \(response)")
+                return
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(responseString!)")
+            
+        }
+        
+        task.resume()
+    }
 
     fileprivate func fetchJSON() {
         let urlString = jobsListAPI
-        print(urlString)
+        
+        // FILE A post request, then it will return the jobs.
         
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, _, err) in
@@ -88,7 +151,7 @@ class jobsTableView: UITableViewController {
                     let decoder = JSONDecoder()
                     
                     var converterHandler = try decoder.decode(ListObject.self, from: data)
-                    self.arrRes = [converterHandler]
+                    self.jobsArray = [converterHandler]
                     
                     self.jobsTableView.reloadData()
                     
@@ -191,5 +254,3 @@ class jobsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 }
-
-
