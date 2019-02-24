@@ -159,7 +159,11 @@ class jobsTableView: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
 }
 
 class jobsTableViewCell: UITableViewCell {

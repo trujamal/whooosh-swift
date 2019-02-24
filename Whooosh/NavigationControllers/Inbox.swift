@@ -22,7 +22,9 @@ class inboxController: UIViewController {
     }
     
     @IBAction func addSearchBar(_ sender: Any) {
-        
+        let searchbarComponent = UISearchController(searchResultsController: nil)
+        searchbarComponent.searchResultsUpdater = self as? UISearchResultsUpdating
+        self.navigationItem.searchController = searchbarComponent
     }
     
 

@@ -105,3 +105,27 @@ extension UITableView {
         return indexPathForRow(at: location)
     }
 }
+
+//===========================================
+// MARK: UIImage extension
+//===========================================
+extension UIImage {
+    static func render(size: CGSize, _ draw: () -> Void) -> UIImage? {
+        UIGraphicsBeginImageContext(size)
+        defer { UIGraphicsEndImageContext() }
+        
+        draw()
+        
+        return UIGraphicsGetImageFromCurrentImageContext()?
+            .withRenderingMode(.alwaysTemplate)
+    }
+    
+    static func make(size: CGSize, color: UIColor = .white) -> UIImage? {
+        return render(size: size) {
+            color.setFill()
+            UIRectFill(CGRect(origin: .zero, size: size))
+        }
+    }
+}
+
+
