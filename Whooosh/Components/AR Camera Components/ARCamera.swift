@@ -52,14 +52,6 @@ class ARController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, CLLo
     
     var latestPrediction : String = "…" // a variable containing the latest CoreML prediction
     
-    @IBOutlet weak var discButton: UIButton!
-    
-    @IBOutlet weak var listing_CollectionVW: UICollectionView!
-    
-    @IBOutlet weak var moreButton: UIButton!
-    
-    @IBOutlet weak var camButton: UIButton!
-    
     @IBOutlet var backRecognizer: UISwipeGestureRecognizer!
     @IBOutlet weak var gsdgs: UILabel!
     
@@ -91,7 +83,6 @@ class ARController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, CLLo
         locationManager.requestAlwaysAuthorization()
         
         // Hiding Initial Cardview
-        listing_CollectionVW.isHidden = true
         
         
         
@@ -124,9 +115,6 @@ class ARController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, CLLo
         // Begin Loop to Update CoreML
         //        loopCoreMLUpdate()
         
-        // Collection View Information
-        listing_CollectionVW.delegate = self
-        listing_CollectionVW.dataSource = self
         
         // Data Settings Function Calls
         let alighnemtInfo = ARConfiguration.WorldAlignment.gravityAndHeading
@@ -173,7 +161,7 @@ class ARController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, CLLo
                     var converterHandler = try decoder.decode(ListObject.self, from: data)
                     self.arrRes = [converterHandler]
                     
-                    self.listing_CollectionVW.reloadData()
+//                    self.listing_CollectionVW.reloadData()
                     
                 } catch let jsonErr {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
@@ -220,7 +208,7 @@ class ARController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, CLLo
         
         fetchJSON()
         print(arrRes.count)
-        listing_CollectionVW.isHidden = false
+//        listing_CollectionVW.isHidden = false
         //if tapGesture returns a value{
         //infoView.isHidden = false
         //houseImage.image = (pull from backend)
@@ -340,17 +328,17 @@ class ARController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, CLLo
     
     func intialDesignLoader() {
         
-        discButton.layer.cornerRadius = discButton.bounds.size.height/2
-        discButton.clipsToBounds = true
-        
-        
-        moreButton.layer.cornerRadius = moreButton.bounds.size.height/2
-        moreButton.clipsToBounds = true
-        
-        
-        camButton.layer.cornerRadius = camButton.bounds.size.height/2
-        camButton.clipsToBounds = true
-        camButton.isEnabled = false
+//        discButton.layer.cornerRadius = discButton.bounds.size.height/2
+//        discButton.clipsToBounds = true
+//
+//
+//        moreButton.layer.cornerRadius = moreButton.bounds.size.height/2
+//        moreButton.clipsToBounds = true
+//
+//
+//        camButton.layer.cornerRadius = camButton.bounds.size.height/2
+//        camButton.clipsToBounds = true
+//        camButton.isEnabled = false
         
     }
     

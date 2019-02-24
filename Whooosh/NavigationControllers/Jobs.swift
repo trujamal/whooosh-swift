@@ -9,6 +9,8 @@
 import UIKit
 import Mapbox
 import CoreLocation
+import FFPopup
+
 
 class jobController: UIViewController, CLLocationManagerDelegate, MGLMapViewDelegate {
 
@@ -23,19 +25,37 @@ class jobController: UIViewController, CLLocationManagerDelegate, MGLMapViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeMapBoxCompoenents()
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        addSwipe()
+        navigationInit()
+        mapboxView.delegate = self
+
+    }
+    
+    private func navigationInit() {
+self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never
         title = "Jobs"
         let searchbarComponent = UISearchController(searchResultsController: nil)
         searchbarComponent.searchResultsUpdater = self as? UISearchResultsUpdating
         self.navigationItem.searchController = searchbarComponent
-        mapboxView.delegate = self
-
-
-        
     }
     
-    @IBAction func backSwiped(_ sender: Any) {
+    func addSwipe() {
+        let directions: [UISwipeGestureRecognizer.Direction] = [.right, .left, .up, .down]
+        for direction in directions {
+            let gesture = UISwipeGestureRecognizer(target: self, action: Selector(("handleSwipe:")))
+            gesture.direction = direction
+            self.view.addGestureRecognizer(gesture);
+            
+        }
+    }
+    
+    @IBAction func openCamera(_ sender: Any) {
+        performSegue(withIdentifier: "openARCameraComponent", sender: nil)
+    }
+    
+    
+    func handleSwipe(sender: UISwipeGestureRecognizer) {
         performSegue(withIdentifier: "openARCameraComponent", sender: self)
     }
     
@@ -44,7 +64,7 @@ class jobController: UIViewController, CLLocationManagerDelegate, MGLMapViewDele
         self.locationManager.requestAlwaysAuthorization()
         mapboxView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        var locManager = CLLocationManager()
+        let locManager = CLLocationManager()
         var currentLocation: CLLocation!
         
         if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||

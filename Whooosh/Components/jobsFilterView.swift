@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class jobsFilterView: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var FilterTag: UIView!
     @IBOutlet weak var DistanceTag: UILabel!
@@ -26,6 +27,7 @@ class jobsFilterView: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboard()
+        MileRadius.text = "\(DistanceSlider.value)mi"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,7 +35,10 @@ class jobsFilterView: UIViewController, UITextFieldDelegate {
     
         
     }
-
+    @IBAction func closeView(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func distanceSliderAction(_ sender: UISlider) {
         let currentValue = Int(sender.value)
         MileRadius.text = "\(currentValue)mi"

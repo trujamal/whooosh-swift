@@ -10,11 +10,17 @@ import UIKit
 
 class profileController: UIViewController {
 
+    @IBOutlet weak var containerViewStatic: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
 
 
+    }
+    
+    @IBAction func EditProfilePage(_ sender: Any) {
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,3 +44,35 @@ class profileController: UIViewController {
     */
 
 }
+
+class ProfileManagemntController: UITableViewController {
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userJoinDate: UILabel!
+    
+    
+    override func viewDidLoad() {
+        handleCirlceImage()
+    }
+    
+    private func handleCirlceImage() {
+        profileImage.layer.masksToBounds = false
+
+        profileImage.layer.cornerRadius = profileImage.frame.height/2
+        profileImage.clipsToBounds = true
+    }
+    
+    
+}
+
+class ProfileHeader: UITableViewCell {
+    
+    
+}
+
+class AccountHeader: UITableViewCell {
+    
+    
+}
+
