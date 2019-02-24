@@ -102,10 +102,6 @@ class jobsTableView: UITableViewController, CLLocationManagerDelegate    {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jobsArray.count
-    }
     
     @objc func handleALERT() {
         
@@ -157,6 +153,7 @@ class jobsTableView: UITableViewController, CLLocationManagerDelegate    {
                         
                         var converterHandler = try decoder.decode(jobsObject.self, from: data)
                         self.jobsArray = [converterHandler]
+                        print(self.jobsArray)
                         
                         self.jobsTableView.reloadData()
                         
@@ -177,101 +174,6 @@ class jobsTableView: UITableViewController, CLLocationManagerDelegate    {
         }
         
         task.resume()
-    }
-
-    fileprivate func fetchJSON() {
-        let urlString = jobsListAPI
-        
-        // FILE A post request, then it will return the jobs.
-        
-        guard let url = URL(string: urlString) else { return }
-        URLSession.shared.dataTask(with: url) { (data, _, err) in
-            DispatchQueue.main.async {
-                if let err = err {
-                    print("Failed to get data from url:", err)
-                }
-                
-                guard let data = data else { return }
-                
-                do {
-                    // link in description for video on JSONDecoder
-                    let decoder = JSONDecoder()
-                    
-                    var jobConverter = try decoder.decode(jobsObject.self, from: data)
-                    self.jobsArray = [jobConverter]
-                    
-                    self.jobsTableView.reloadData()
-                    
-                } catch let jsonErr {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
-                        self.handleALERT()
-                    })
-                    print("Failed to decode:", jsonErr)
-                    
-                    return
-                }
-            }
-            }.resume()
-        
-        
-    }
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
     }
     
 }
@@ -300,4 +202,35 @@ class jobsTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
+}
+
+extension jobsTableView {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return jobsArray.count
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let jobs = jobsArray[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "jobsCell", for: indexPath) as! jobsTableViewCell
+        
+        // Text Information
+        cell.companyLabel.text = "$\(String(describing: jobs.company!))"
+        cell.positionLabel.text = "$\(String(describing: jobs.title!))"
+        cell.locationLabel.text = "Dallas, Tx"
+        cell.salaryLabel.text = "$\(String(describing: jobs.pay!)) a year"
+        
+        cell.clipsToBounds = true
+        
+        return cell
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
