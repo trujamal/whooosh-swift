@@ -8,16 +8,68 @@
 
 import UIKit
 
-class jobsFilterView: UIViewController {
-
+class jobsFilterView: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var FilterTag: UIView!
+    @IBOutlet weak var DistanceTag: UILabel!
+    @IBOutlet weak var JobTypeTag: UILabel!
+    @IBOutlet weak var LocationTag: UILabel!
+    @IBOutlet weak var CompanyTag: UILabel!
+    @IBOutlet weak var CloseButton: UIButton!
+    @IBOutlet weak var HorizontalSpacer: UIView!
+    @IBOutlet weak var DistanceSlider: UISlider!
+    @IBOutlet weak var MileRadius: UILabel!
+    @IBOutlet weak var JobTypeField: UITextField!
+    @IBOutlet weak var LocationTypeField: UITextField!
+    @IBOutlet weak var CompanyTypeField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        hideKeyboard()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    
+        
     }
 
+    @IBAction func distanceSliderAction(_ sender: UISlider) {
+        let currentValue = Int(sender.value)
+        MileRadius.text = "\(currentValue)mi"
+    }
+    
+    @IBAction func closeModalView(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == JobTypeField {
+
+        }
+    }
+    
+    @IBAction func ApplyFilterButton(_ sender: Any) {
+//        let filteredArray = editableStaticUserData.companies.filter {
+//            if let companyIdentifier = $0.companiesIdentifier,
+//                let companyIds = self.editableFilter?.companyIds,
+//            where companyIds.contains(companyIdentifier) {
+//                return true
+//            }
+//        }
+//        var matchedCompanyIds = Set(filteredArray)
+        closeModalView(AnyObject.self)
+    }
+    
+    @IBAction func ClearFilterButton(_ sender: Any) {
+        
+        // Sending empty values.
+        JobTypeField.text = ""
+        LocationTypeField.text = ""
+        CompanyTypeField.text = ""
+        closeModalView(AnyObject.self)
+    }
+    
+
+    
 }
