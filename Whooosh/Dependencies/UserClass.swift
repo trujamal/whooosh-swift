@@ -18,11 +18,9 @@ class UserClass: NSObject {
 
 class Jobs: NSObject {
     var jobTitle: String?
-    var jobDistance: Int?
     var jobDescription: Int?
     var jobApplyLink: String?
-    var latitude: Float?
-    var longitude: Float?
+    var location: [Float]?
 }
 
 class Trip: NSObject  {

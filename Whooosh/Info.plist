@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Bro let us use your camera for some cool stuff</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>In order to provide you with the best expirience</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

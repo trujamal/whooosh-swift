@@ -9,10 +9,28 @@
 import UIKit
 
 class jobsTableView: UITableViewController {
+    var arrRes = [ListObject]() //Array of dictionary
 
+    @IBOutlet var jobsTableView: UITableView!
+    @IBOutlet weak var editFilter: UIBarButtonItem!
+    @IBOutlet weak var mapViewSwitcher: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+        title = "Jobs"
+        let searchbarComponent = UISearchController(searchResultsController: nil)
+        searchbarComponent.searchResultsUpdater = self as? UISearchResultsUpdating
+        
+        self.navigationItem.searchController = searchbarComponent
 
+        
+        tableView.estimatedRowHeight = 250
+        tableView.tableFooterView = UIView()
+        tableView.delegate = self
+        tableView.dataSource = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -20,6 +38,15 @@ class jobsTableView: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    @IBAction func editFilterHandler(_ sender: Any) {
+
+
+    }
+    
+    @IBAction func openMapHandler(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -31,7 +58,52 @@ class jobsTableView: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
+    
+    @objc func handleALERT() {
+        
+        let alert = UIAlertController(title: "Uh oh", message: "Looks like something went wrong please try again later.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        
+        self.present(alert, animated: true)
+    }
 
+    fileprivate func fetchJSON() {
+        let urlString = jobsListAPI
+        print(urlString)
+        
+        guard let url = URL(string: urlString) else { return }
+        URLSession.shared.dataTask(with: url) { (data, _, err) in
+            DispatchQueue.main.async {
+                if let err = err {
+                    print("Failed to get data from url:", err)
+                }
+                
+                guard let data = data else { return }
+                
+                do {
+                    // link in description for video on JSONDecoder
+                    let decoder = JSONDecoder()
+                    
+                    var converterHandler = try decoder.decode(ListObject.self, from: data)
+                    self.arrRes = [converterHandler]
+                    
+                    self.jobsTableView.reloadData()
+                    
+                } catch let jsonErr {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+                        self.handleALERT()
+                    })
+                    print("Failed to decode:", jsonErr)
+                    
+                    return
+                }
+            }
+            }.resume()
+        
+        
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
@@ -87,4 +159,30 @@ class jobsTableView: UITableViewController {
     }
     */
 
+}
+
+class jobsTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var cellViewContainer: UIView!
+    @IBOutlet weak var positionLabel: UILabel!
+    @IBOutlet weak var companyLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var salaryLabel: UILabel!
+    @IBOutlet weak var notificationCircle: UIImageView!
+    
+    override func prepareForReuse() {
+        cellViewContainer.layer.cornerRadius = 8.0
+        cellViewContainer.clipsToBounds = true
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
 }
