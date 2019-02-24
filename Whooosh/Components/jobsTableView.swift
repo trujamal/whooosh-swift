@@ -147,24 +147,15 @@ class jobsTableView: UITableViewController, CLLocationManagerDelegate    {
                 if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,Any>]
                 {
                     print(jsonArray) // use the json here
-                    do {
-                        // link in description for video on JSONDecoder
-                        let decoder = JSONDecoder()
-                        
-                        var converterHandler = try decoder.decode(jobsObject.self, from: data)
-                        self.jobsArray = [converterHandler]
-                        print(self.jobsArray)
-                        
-                        self.jobsTableView.reloadData()
-                        
-                    } catch let jsonErr {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
-                            self.handleALERT()
-                        })
-                        print("Failed to decode:", jsonErr)
-                        
-                        return
-                    }
+                    // link in description for video on JSONDecoder
+                    let decoder = JSONDecoder()
+                    
+                    var converterHandler = try decoder.decode(jobsObject.self, from: data)
+                    self.jobsArray = [converterHandler]
+                    
+                    
+                    self.jobsTableView.reloadData()
+                    
                 } else {
                     print("bad json")
                 }
@@ -175,6 +166,7 @@ class jobsTableView: UITableViewController, CLLocationManagerDelegate    {
         
         task.resume()
     }
+
     
 }
 
