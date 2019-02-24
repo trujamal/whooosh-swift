@@ -11,10 +11,30 @@ import CoreData
 import CoreLocation
 
 
+struct jobsObject: Decodable {
+    let company: String!
+    let location: [Double]!
+    let title: String!
+    let keywords: [String]!
+    let description: String!
+    let pay: Double!
+    let applyLink: String!
+    
+    public enum CodingKeys: String, CodingKey {
+        case company = "company"
+        case location = "location"
+        case title = "title"
+        case keywords = "keywords"
+        case description = "description"
+        case pay = "pay"
+        case applyLink = "applyLink"
+    }
+}
+
 class jobsTableView: UITableViewController, CLLocationManagerDelegate    {
    
     // Initialization Manager
-    var jobsArray = [ListObject]() //Array of dictionary
+    var jobsArray = [jobsObject]() //Array of dictionary
     var locationManager = CLLocationManager()
 
     @IBOutlet var jobsTableView: UITableView!
@@ -131,7 +151,23 @@ class jobsTableView: UITableViewController, CLLocationManagerDelegate    {
                 if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,Any>]
                 {
                     print(jsonArray) // use the json here
-                    
+                    do {
+                        // link in description for video on JSONDecoder
+                        let decoder = JSONDecoder()
+                        
+                        var converterHandler = try decoder.decode(jobsObject.self, from: data)
+                        self.jobsArray = [converterHandler]
+                        
+                        self.jobsTableView.reloadData()
+                        
+                    } catch let jsonErr {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+                            self.handleALERT()
+                        })
+                        print("Failed to decode:", jsonErr)
+                        
+                        return
+                    }
                 } else {
                     print("bad json")
                 }
@@ -161,8 +197,8 @@ class jobsTableView: UITableViewController, CLLocationManagerDelegate    {
                     // link in description for video on JSONDecoder
                     let decoder = JSONDecoder()
                     
-                    var converterHandler = try decoder.decode(ListObject.self, from: data)
-                    self.jobsArray = [converterHandler]
+                    var jobConverter = try decoder.decode(jobsObject.self, from: data)
+                    self.jobsArray = [jobConverter]
                     
                     self.jobsTableView.reloadData()
                     
